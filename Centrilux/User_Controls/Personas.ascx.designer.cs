@@ -7,36 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Centrilux {
+namespace Centrilux.User_Controls {
     
     
-    public partial class SiteMaster {
+    public partial class Personas {
         
         /// <summary>
-        /// HeadContent control.
+        /// lblMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadContent;
+        protected global::System.Web.UI.WebControls.Label lblMessage;
         
         /// <summary>
-        /// SubbodyContent control.
+        /// gridPersonas control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder SubbodyContent;
+        protected global::System.Web.UI.WebControls.GridView gridPersonas;
         
         /// <summary>
-        /// MainContent control.
+        /// hdnPersonasCount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.HiddenField hdnPersonasCount;
     }
 }

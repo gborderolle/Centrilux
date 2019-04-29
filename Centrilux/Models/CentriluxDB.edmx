@@ -205,21 +205,6 @@
           <Property Name="Chofer_ID" Type="Int32" Nullable="false" />
           <Property Name="Comentarios" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="Persona">
-          <Key>
-            <PropertyRef Name="Persona_ID" />
-          </Key>
-          <Property Name="Persona_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Documento_cedula_ID" Type="Int32" />
-          <Property Name="Documento_libreta_ID" Type="Int32" />
-          <Property Name="Nombre_completo" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Fecha_nacimiento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Ciudad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Departamento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Contacto1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Contacto2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="Propietario">
           <Key>
             <PropertyRef Name="Propietario_ID" />
@@ -284,14 +269,28 @@
           <EntitySet Name="Documento_propiedad" EntityType="Self.Documento_propiedad" />
           <EntitySet Name="Movils" EntityType="Self.Movil" />
           <EntitySet Name="Movil_Chofer" EntityType="Self.Movil_Chofer" />
-          <EntitySet Name="Personas" EntityType="Self.Persona" />
           <EntitySet Name="Propietarios" EntityType="Self.Propietario" />
           <EntitySet Name="Rol_usuario" EntityType="Self.Rol_usuario" />
           <EntitySet Name="Seguroes" EntityType="Self.Seguro" />
           <EntitySet Name="Tickets" EntityType="Self.Ticket" />
           <EntitySet Name="Turnoes" EntityType="Self.Turno" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
+          <EntitySet Name="Persona" EntityType="CentriluxDB_Model.Persona" />
         </EntityContainer>
+        <EntityType Name="Persona">
+          <Key>
+            <PropertyRef Name="Persona_ID" />
+          </Key>
+          <Property Name="Persona_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Documento_cedula_ID" Type="Int32" />
+          <Property Name="Documento_libreta_ID" Type="Int32" />
+          <Property Name="Nombre_completo" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Ciudad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Departamento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Contacto1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Contacto2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -359,21 +358,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Personas">
-            <EntityTypeMapping TypeName="CentriluxDB_Model.Persona">
-              <MappingFragment StoreEntitySet="Persona">
-                <ScalarProperty Name="Contacto2" ColumnName="Contacto2" />
-                <ScalarProperty Name="Contacto1" ColumnName="Contacto1" />
-                <ScalarProperty Name="Persona_ID" ColumnName="Persona_ID" />
-                <ScalarProperty Name="Documento_cedula_ID" ColumnName="Documento_cedula_ID" />
-                <ScalarProperty Name="Documento_libreta_ID" ColumnName="Documento_libreta_ID" />
-                <ScalarProperty Name="Nombre_completo" ColumnName="Nombre_completo" />
-                <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
-                <ScalarProperty Name="Departamento" ColumnName="Departamento" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Propietarios">
             <EntityTypeMapping TypeName="CentriluxDB_Model.Propietario">
               <MappingFragment StoreEntitySet="Propietario">
@@ -434,6 +418,21 @@
                 <ScalarProperty Name="Rol_usuario_ID" ColumnName="Rol_usuario_ID" />
                 <ScalarProperty Name="EsAdmin" ColumnName="EsAdmin" />
                 <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Persona">
+            <EntityTypeMapping TypeName="CentriluxDB_Model.Persona">
+              <MappingFragment StoreEntitySet="Persona">
+                <ScalarProperty Name="Contacto2" ColumnName="Contacto2" />
+                <ScalarProperty Name="Contacto1" ColumnName="Contacto1" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+                <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+                <ScalarProperty Name="Nombre_completo" ColumnName="Nombre_completo" />
+                <ScalarProperty Name="Documento_libreta_ID" ColumnName="Documento_libreta_ID" />
+                <ScalarProperty Name="Documento_cedula_ID" ColumnName="Documento_cedula_ID" />
+                <ScalarProperty Name="Persona_ID" ColumnName="Persona_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

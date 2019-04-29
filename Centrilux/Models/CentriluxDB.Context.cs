@@ -31,12 +31,12 @@ namespace Centrilux.Models
         public virtual DbSet<Documento_propiedad> Documento_propiedad { get; set; }
         public virtual DbSet<Movil> Movils { get; set; }
         public virtual DbSet<Movil_Chofer> Movil_Chofer { get; set; }
-        public virtual DbSet<Persona> Personas { get; set; }
         public virtual DbSet<Propietario> Propietarios { get; set; }
         public virtual DbSet<Rol_usuario> Rol_usuario { get; set; }
         public virtual DbSet<Seguro> Seguroes { get; set; }
         public virtual DbSet<Ticket> Tickets { get; set; }
         public virtual DbSet<Turno> Turnoes { get; set; }
         public virtual DbSet<Usuario> Usuarios { get; set; }
+        public virtual DbSet<Persona> Persona { get; set; }
     }
 }

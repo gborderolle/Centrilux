@@ -18,7 +18,6 @@ namespace Centrilux.Models
         public Nullable<int> Documento_cedula_ID { get; set; }
         public Nullable<int> Documento_libreta_ID { get; set; }
         public string Nombre_completo { get; set; }
-        public string Fecha_nacimiento { get; set; }
         public string Ciudad { get; set; }
         public string Departamento { get; set; }
         public string Email { get; set; }

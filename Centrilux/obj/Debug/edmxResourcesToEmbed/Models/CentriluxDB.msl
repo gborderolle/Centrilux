@@ -62,21 +62,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Personas">
-      <EntityTypeMapping TypeName="CentriluxDB_Model.Persona">
-        <MappingFragment StoreEntitySet="Persona">
-          <ScalarProperty Name="Contacto2" ColumnName="Contacto2" />
-          <ScalarProperty Name="Contacto1" ColumnName="Contacto1" />
-          <ScalarProperty Name="Persona_ID" ColumnName="Persona_ID" />
-          <ScalarProperty Name="Documento_cedula_ID" ColumnName="Documento_cedula_ID" />
-          <ScalarProperty Name="Documento_libreta_ID" ColumnName="Documento_libreta_ID" />
-          <ScalarProperty Name="Nombre_completo" ColumnName="Nombre_completo" />
-          <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
-          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Propietarios">
       <EntityTypeMapping TypeName="CentriluxDB_Model.Propietario">
         <MappingFragment StoreEntitySet="Propietario">
@@ -137,6 +122,21 @@
           <ScalarProperty Name="Rol_usuario_ID" ColumnName="Rol_usuario_ID" />
           <ScalarProperty Name="EsAdmin" ColumnName="EsAdmin" />
           <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Persona">
+      <EntityTypeMapping TypeName="CentriluxDB_Model.Persona">
+        <MappingFragment StoreEntitySet="Persona">
+          <ScalarProperty Name="Contacto2" ColumnName="Contacto2" />
+          <ScalarProperty Name="Contacto1" ColumnName="Contacto1" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+          <ScalarProperty Name="Nombre_completo" ColumnName="Nombre_completo" />
+          <ScalarProperty Name="Documento_libreta_ID" ColumnName="Documento_libreta_ID" />
+          <ScalarProperty Name="Documento_cedula_ID" ColumnName="Documento_cedula_ID" />
+          <ScalarProperty Name="Persona_ID" ColumnName="Persona_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

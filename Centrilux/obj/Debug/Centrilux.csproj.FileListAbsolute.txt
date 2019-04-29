@@ -76,3 +76,4 @@ C:\Users\GBORDEROLLE-PC\Documents\GitHub\Centrilux\Centrilux\bin\Microsoft.Owin.
 C:\Users\GBORDEROLLE-PC\Documents\GitHub\Centrilux\Centrilux\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\GBORDEROLLE-PC\Documents\GitHub\Centrilux\Centrilux\obj\Debug\Centrilux.dll
 C:\Users\GBORDEROLLE-PC\Documents\GitHub\Centrilux\Centrilux\obj\Debug\Centrilux.pdb
+C:\Users\GBORDEROLLE-PC\Documents\GitHub\Centrilux\Centrilux\obj\Debug\Centrilux.csprojResolveAssemblyReference.cache
