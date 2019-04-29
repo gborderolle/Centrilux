@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Central de datos" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Central.aspx.cs" Inherits="Centrilux.Pages.Central" %>
 
-<%@ Register Src="~/User_Controls/Estaticos/Personas.ascx" TagPrefix="uc1" TagName="Personas" %>
+<%@ Register Src="~/User_Controls/Personas.ascx" TagPrefix="uc1" TagName="Personas" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="HeadContent" runat="server">
 

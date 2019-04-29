@@ -67,27 +67,27 @@ namespace Centrilux.User_Controls
             }
         }
 
-        protected void gridClientes_RowDataBound(object sender, GridViewRowEventArgs e)
+        protected void gridPersonas_RowDataBound(object sender, GridViewRowEventArgs e)
         {
         }
 
-        protected void gridClientes_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void gridPersonas_RowCommand(object sender, GridViewCommandEventArgs e)
         {
         }
 
-        //protected void gridClientes_RowEditing(object sender, GridViewEditEventArgs e)
+        //protected void gridPersonas_RowEditing(object sender, GridViewEditEventArgs e)
         //{
         //}
 
-        //protected void gridClientes_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        //protected void gridPersonas_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         //{
         //}
 
-        //protected void gridClientes_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        //protected void gridPersonas_RowUpdating(object sender, GridViewUpdateEventArgs e)
         //{
         //}
 
-        //protected void gridClientes_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        //protected void gridPersonas_RowDeleting(object sender, GridViewDeleteEventArgs e)
         //{
         //}
 

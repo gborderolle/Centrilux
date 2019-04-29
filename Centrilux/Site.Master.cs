@@ -75,17 +75,17 @@ namespace Centrilux
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["UserID"] != null && Session["UserName"] != null)
-            {
-                if (!IsPostBack)
-                {
-                    build_date = GetLinkerTime(Assembly.GetExecutingAssembly()).ToString(Global_Variables.ShortDateTime_format1);
-                }
-            }
-            else
-            {
-                Response.Redirect("/Acceso.aspx");
-            }
+            //if (Session["UserID"] != null && Session["UserName"] != null)
+            //{
+            //    if (!IsPostBack)
+            //    {
+            //        build_date = GetLinkerTime(Assembly.GetExecutingAssembly()).ToString(Global_Variables.ShortDateTime_format1);
+            //    }
+            //}
+            //else
+            //{
+            //    Response.Redirect("/Acceso.aspx");
+            //}
         }
 
         public static DateTime GetLinkerTime(Assembly assembly, TimeZoneInfo target = null)
