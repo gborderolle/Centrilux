@@ -7,24 +7,24 @@
     <!-- STYLES EXTENSION -->
 
     <!-- Theme style -->
-    <link rel="stylesheet" href="/assets/dist/css/pages/InfoBoxes.min.css" />
-    <link rel="stylesheet" href="/assets/dist/css/pages/Datos.css" />
+    <link rel="stylesheet" href="/Content/dist/css/pages/InfoBoxes.min.css" />
+    <link rel="stylesheet" href="/Content/dist/css/pages/Datos.css" />
 
     <!-- AdminLTE Skins. Choose a skin from the css/skins
      folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="/assets/dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="/Content/dist/css/skins/_all-skins.min.css">
     <!-- iCheck -->
-    <link rel="stylesheet" href="/assets/plugins/iCheck/flat/blue.css">
+    <link rel="stylesheet" href="/Content/plugins/iCheck/flat/blue.css">
     <!-- Morris chart -->
-    <link rel="stylesheet" href="/assets/plugins/morris/morris.css">
+    <link rel="stylesheet" href="/Content/plugins/morris/morris.css">
     <!-- jvectormap -->
-    <link rel="stylesheet" href="/assets/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+    <link rel="stylesheet" href="/Content/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
     <!-- Date Picker -->
-    <link rel="stylesheet" href="/assets/plugins/datepicker/datepicker3.css">
+    <link rel="stylesheet" href="/Content/plugins/datepicker/datepicker3.css">
     <!-- Daterange picker -->
-    <link rel="stylesheet" href="/assets/plugins/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="/Content/plugins/daterangepicker/daterangepicker.css">
     <!-- bootstrap wysihtml5 - text editor -->
-    <link rel="stylesheet" href="/assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+    <link rel="stylesheet" href="/Content/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -41,36 +41,36 @@
     <!-- PAGE SCRIPTS -->
     <!-- Morris.js charts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-    <script src="/assets/plugins/morris/morris.min.js"></script>
+    <script src="Content/plugins/morris/morris.min.js"></script>
     <!-- Sparkline -->
-    <script src="/assets/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <script src="Content/plugins/sparkline/jquery.sparkline.min.js"></script>
     <!-- jvectormap -->
-    <script src="/assets/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-    <script src="/assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="Content/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="Content/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
     <!-- jQuery Knob Chart -->
-    <script src="/assets/plugins/knob/jquery.knob.js"></script>
+    <script src="Content/plugins/knob/jquery.knob.js"></script>
     <!-- daterangepicker -->
     <%--<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>--%>
-    <script src="/assets/dist/js/moment.js"></script>
-    <script src="/assets/plugins/daterangepicker/daterangepicker.js"></script>
+    <script src="Content/dist/js/moment.js"></script>
+    <script src="Content/plugins/daterangepicker/daterangepicker.js"></script>
     <!-- datepicker -->
-    <script src="/assets/plugins/datepicker/bootstrap-datepicker.js"></script>
+    <script src="Content/plugins/datepicker/bootstrap-datepicker.js"></script>
     <!-- Bootstrap WYSIHTML5 -->
-    <script src="/assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+    <script src="Content/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
     <!-- Slimscroll -->
-    <script src="/assets/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <script src="Content/plugins/slimScroll/jquery.slimscroll.min.js"></script>
     <!-- FastClick -->
-    <script src="/assets/plugins/fastclick/fastclick.js"></script>
+    <script src="Content/plugins/fastclick/fastclick.js"></script>
     <!-- AdminLTE App -->
-    <script src="/assets/dist/js/app.min.js"></script>
+    <script src="Content/dist/js/app.min.js"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="/assets/dist/js/demo.js"></script>
-    <script src="/assets/dist/js/jquery.quicksearch.js"></script>
+    <script src="Content/dist/js/demo.js"></script>
+    <script src="Content/dist/js/jquery.quicksearch.js"></script>
 
     <!-- PAGE JS -->
-    <script type="text/javascript" src="/assets/dist/js/AuxiliarFunctions.js"></script>
-    <script type="text/javascript" src="/assets/dist/js/pages/Datos.js"></script>
-    <script type="text/javascript" src="/assets/dist/js/jquery.tablesorter.js"></script>
+    <script type="text/javascript" src="Content/dist/js/AuxiliarFunctions.js"></script>
+    <script type="text/javascript" src="Content/dist/js/pages/Datos.js"></script>
+    <script type="text/javascript" src="Content/dist/js/jquery.tablesorter.js"></script>
 
 </asp:Content>
 
@@ -83,8 +83,6 @@
         <section class="content-header">
             <h1>Base de Datos
         <a href="/Pages/Datos.aspx"><small style="color: black">Datos estáticos</small></a>
-                <small>| </small>
-                <a href="/Pages/Datos_configuracion.aspx"><small>Datos de configuración</small></a>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i>Inicio</a></li>
@@ -258,35 +256,31 @@
                                     <div class="divTables" id="divClientes" style="display: block;">
                                         <asp:UpdatePanel ID="upClientes" runat="server">
                                             <ContentTemplate>
-                                                <uc1:Clientes runat="server" ID="Clientes" />
+                                                <uc1:Personas runat="server" ID="Personas" />
                                             </ContentTemplate>
                                         </asp:UpdatePanel>
                                     </div>
                                     <div class="divTables" id="divClientes_Barraca" style="display: none;">
                                         <asp:UpdatePanel ID="upClientes_Barraca" runat="server">
                                             <ContentTemplate>
-                                                <uc1:Clientes_Barraca runat="server" ID="Clientes_Barraca" />
                                             </ContentTemplate>
                                         </asp:UpdatePanel>
                                     </div>                                    
                                     <div class="divTables" id="divCuadrillas" style="display: none;">
                                         <asp:UpdatePanel ID="upCuadrillas" runat="server">
                                             <ContentTemplate>
-                                                <uc1:Cuadrillas runat="server" ID="Cuadrillas" />
                                             </ContentTemplate>
                                         </asp:UpdatePanel>
                                     </div>
                                     <div class="divTables" id="divCamiones" style="display: none;">
                                         <asp:UpdatePanel ID="upCamiones" runat="server">
                                             <ContentTemplate>
-                                                <uc1:Camiones runat="server" ID="Camiones" />
                                             </ContentTemplate>
                                         </asp:UpdatePanel>
                                     </div>
                                     <div class="divTables" id="divChoferes" style="display: none;">
                                         <asp:UpdatePanel ID="upChoferes" runat="server">
                                             <ContentTemplate>
-                                                <uc1:Choferes runat="server" ID="Choferes" />
                                             </ContentTemplate>
                                         </asp:UpdatePanel>
                                     </div>
@@ -300,14 +294,12 @@
                                     <div class="divTables" id="divFleteros" style="display: none;">
                                         <asp:UpdatePanel ID="upFleteros" runat="server">
                                             <ContentTemplate>
-                                                <uc1:Fleteros runat="server" ID="Fleteros" />
                                             </ContentTemplate>
                                         </asp:UpdatePanel>
                                     </div>               
                                     <div class="divTables" id="divProveedores" style="display: none;">
                                         <asp:UpdatePanel ID="upProveedores" runat="server">
                                             <ContentTemplate>
-                                                <uc1:Proveedores runat="server" ID="Proveedores" />
                                             </ContentTemplate>
                                         </asp:UpdatePanel>
                                     </div>                    

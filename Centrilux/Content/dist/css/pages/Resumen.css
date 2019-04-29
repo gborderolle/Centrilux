@@ -1,0 +1,35 @@
+﻿@media (max-width: 500px) {
+    span {
+        /*font-size: 25px;*/
+    }
+
+    h3, h2 {
+        font-size: 1.2em !important;
+    }
+
+    li {
+        width: 40%;
+        font-size: smaller;
+    }
+
+    th, td {
+        font-size: smaller;
+    }
+
+    #txbMonthpicker {
+        width: 100px;
+    }
+
+    #txbSearchViajes {
+        width: 150px;
+    }
+}
+
+
+h1, h2, h3, h4 {
+    cursor: default;
+}
+
+.chzn-single {
+            height: 30px !important;
+        }

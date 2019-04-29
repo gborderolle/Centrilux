@@ -22,6 +22,15 @@ namespace Centrilux.Pages {
         protected global::System.Web.UI.UpdatePanel upClientes;
         
         /// <summary>
+        /// Personas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Centrilux.User_Controls.Personas Personas;
+        
+        /// <summary>
         /// upClientes_Barraca control.
         /// </summary>
         /// <remarks>

@@ -25,12 +25,12 @@ namespace Centrilux.User_Controls
 
         private void BindGrid()
         {
+            bool ok = false;
             if (Request.QueryString["tabla"] != null && Request.QueryString["dato"] != null)
             {
                 string tabla_str = Request.QueryString["tabla"];
                 string form_ID_str = Request.QueryString["dato"];
 
-                bool ok = false;
                 if (!string.IsNullOrWhiteSpace(tabla_str) && tabla_str.Equals("clientes"))
                 {
                     using (CentriluxDB context = new CentriluxDB())
@@ -44,27 +44,27 @@ namespace Centrilux.User_Controls
                         }
                     }
                 }
-                if (!ok)
-                {
-                    var obj = new List<Persona>();
-                    obj.Add(new Persona());
-                    // Bind the DataTable which contain a blank row to the GridView
-                    gridPersonas.DataSource = obj;
-                    gridPersonas.DataBind();
-                    int columnsCount = gridPersonas.Columns.Count;
-                    gridPersonas.Rows[0].Cells.Clear();// clear all the cells in the row
-                    gridPersonas.Rows[0].Cells.Add(new TableCell()); //add a new blank cell
-                    gridPersonas.Rows[0].Cells[0].ColumnSpan = columnsCount; //set the column span to the new added cell
-
-                    //You can set the styles here
-                    gridPersonas.Rows[0].Cells[0].HorizontalAlign = HorizontalAlign.Center;
-                    gridPersonas.Rows[0].Cells[0].ForeColor = System.Drawing.Color.Red;
-                    gridPersonas.Rows[0].Cells[0].Font.Bold = true;
-                    //set No Results found to the new added cell
-                    gridPersonas.Rows[0].Cells[0].Text = "No hay registros";
-                }
-                //ScriptManager.RegisterStartupScript(this, typeof(Page), "updateCounts", "updateCounts();", true);
             }
+            if (!ok)
+            {
+                var obj = new List<Persona>();
+                obj.Add(new Persona());
+                // Bind the DataTable which contain a blank row to the GridView
+                gridPersonas.DataSource = obj;
+                gridPersonas.DataBind();
+                int columnsCount = gridPersonas.Columns.Count;
+                gridPersonas.Rows[0].Cells.Clear();// clear all the cells in the row
+                gridPersonas.Rows[0].Cells.Add(new TableCell()); //add a new blank cell
+                gridPersonas.Rows[0].Cells[0].ColumnSpan = columnsCount; //set the column span to the new added cell
+
+                //You can set the styles here
+                gridPersonas.Rows[0].Cells[0].HorizontalAlign = HorizontalAlign.Center;
+                gridPersonas.Rows[0].Cells[0].ForeColor = System.Drawing.Color.Red;
+                gridPersonas.Rows[0].Cells[0].Font.Bold = true;
+                //set No Results found to the new added cell
+                gridPersonas.Rows[0].Cells[0].Text = "No hay registros";
+            }
+            //ScriptManager.RegisterStartupScript(this, typeof(Page), "updateCounts", "updateCounts();", true);
         }
 
         protected void gridPersonas_RowDataBound(object sender, GridViewRowEventArgs e)

@@ -33,10 +33,12 @@
 
     <Columns>
         <asp:BoundField DataField="Persona_ID" HeaderText="ID" HtmlEncode="false" ReadOnly="true" ItemStyle-CssClass="hiddencol hiddencol_real" HeaderStyle-CssClass="hiddencol hiddencol_real" />
-        <asp:BoundField DataField="Nombre" HeaderText="Nombre" HtmlEncode="false" ReadOnly="true" />
-        <asp:BoundField DataField="Telefono" HeaderText="Telefono" HtmlEncode="false" ReadOnly="true" />
+        <asp:BoundField DataField="Nombre_completo" HeaderText="Nombre" HtmlEncode="false" ReadOnly="true" />
+        <asp:BoundField DataField="Ciudad" HeaderText="Ciudad" HtmlEncode="false" ReadOnly="true" />
+        <asp:BoundField DataField="Departamento" HeaderText="Departamento" HtmlEncode="false" ReadOnly="true" />
         <asp:BoundField DataField="Email" HeaderText="Email" HtmlEncode="false" ReadOnly="true" />
-        <asp:BoundField DataField="Comentarios" HeaderText="Comentarios" HtmlEncode="false" ReadOnly="true" />
+        <asp:BoundField DataField="Contacto1" HeaderText="Contacto1" HtmlEncode="false" ReadOnly="true" />
+        <asp:BoundField DataField="Contacto2" HeaderText="Contacto2" HtmlEncode="false" ReadOnly="true" />
     </Columns>
 
 </asp:GridView>
