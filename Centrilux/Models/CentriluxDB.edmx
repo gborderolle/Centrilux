@@ -1,0 +1,432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CentriluxDB_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Chofer">
+          <Key>
+            <PropertyRef Name="Chofer_ID" />
+          </Key>
+          <Property Name="Chofer_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Persona_ID" Type="int" Nullable="false" />
+          <Property Name="Comentarios" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Documento_cedula">
+          <Key>
+            <PropertyRef Name="Documento_cedula_ID" />
+          </Key>
+          <Property Name="Documento_cedula_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Comentarios" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Documento_libreta">
+          <Key>
+            <PropertyRef Name="Documento_libreta_ID" />
+          </Key>
+          <Property Name="Documento_libreta_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fecha_vencimiento" Type="datetime" Nullable="false" />
+          <Property Name="Comentarios" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Documento_propiedad">
+          <Key>
+            <PropertyRef Name="Documento_propiedad_ID" />
+          </Key>
+          <Property Name="Documento_propiedad_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Comentarios" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Movil">
+          <Key>
+            <PropertyRef Name="Movil_ID" />
+          </Key>
+          <Property Name="Movil_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Seguro_ID" Type="int" />
+          <Property Name="Comentarios" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Movil_Chofer">
+          <Key>
+            <PropertyRef Name="Movil_Chofer_ID" />
+          </Key>
+          <Property Name="Movil_Chofer_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Movil_ID" Type="int" Nullable="false" />
+          <Property Name="Chofer_ID" Type="int" Nullable="false" />
+          <Property Name="Comentarios" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Persona">
+          <Key>
+            <PropertyRef Name="Persona_ID" />
+          </Key>
+          <Property Name="Persona_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Documento_cedula_ID" Type="int" />
+          <Property Name="Documento_libreta_ID" Type="int" />
+          <Property Name="Nombre_completo" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Fecha_nacimiento" Type="varchar" MaxLength="50" />
+          <Property Name="Ciudad" Type="varchar" MaxLength="50" />
+          <Property Name="Departamento" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Contacto1" Type="varchar" MaxLength="50" />
+          <Property Name="Contacto2" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Propietario">
+          <Key>
+            <PropertyRef Name="Propietario_ID" />
+          </Key>
+          <Property Name="Propietario_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Persona_ID" Type="int" Nullable="false" />
+          <Property Name="Comentarios" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Rol_usuario">
+          <Key>
+            <PropertyRef Name="Rol_usuario_ID" />
+          </Key>
+          <Property Name="Rol_usuario_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Valor" Type="int" Nullable="false" />
+          <Property Name="Comentarios" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Seguro">
+          <Key>
+            <PropertyRef Name="Seguro_ID" />
+          </Key>
+          <Property Name="Seguro_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tipo" Type="varchar" MaxLength="100" />
+          <Property Name="Fecha_pago" Type="datetime" Nullable="false" />
+          <Property Name="Importe" Type="int" />
+          <Property Name="Comentarios" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Ticket">
+          <Key>
+            <PropertyRef Name="Ticket_ID" />
+          </Key>
+          <Property Name="Ticket_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Movil_ID" Type="int" Nullable="false" />
+          <Property Name="Comentarios" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Turno">
+          <Key>
+            <PropertyRef Name="Turno_ID" />
+          </Key>
+          <Property Name="Turno_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Movil_ID" Type="int" Nullable="false" />
+          <Property Name="Comentarios" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Usuario_ID" />
+          </Key>
+          <Property Name="Usuario_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Usuario" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Clave" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Rol_usuario_ID" Type="int" Nullable="false" />
+          <Property Name="EsAdmin" Type="bit" Nullable="false" />
+          <Property Name="Comentarios" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="CentriluxDB_ModelStoreContainer">
+          <EntitySet Name="Chofer" EntityType="Self.Chofer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Documento_cedula" EntityType="Self.Documento_cedula" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Documento_libreta" EntityType="Self.Documento_libreta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Documento_propiedad" EntityType="Self.Documento_propiedad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Movil" EntityType="Self.Movil" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Movil_Chofer" EntityType="Self.Movil_Chofer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Persona" EntityType="Self.Persona" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Propietario" EntityType="Self.Propietario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rol_usuario" EntityType="Self.Rol_usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Seguro" EntityType="Self.Seguro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ticket" EntityType="Self.Ticket" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Turno" EntityType="Self.Turno" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CentriluxDB_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Chofer">
+          <Key>
+            <PropertyRef Name="Chofer_ID" />
+          </Key>
+          <Property Name="Chofer_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Persona_ID" Type="Int32" Nullable="false" />
+          <Property Name="Comentarios" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Documento_cedula">
+          <Key>
+            <PropertyRef Name="Documento_cedula_ID" />
+          </Key>
+          <Property Name="Documento_cedula_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Comentarios" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Documento_libreta">
+          <Key>
+            <PropertyRef Name="Documento_libreta_ID" />
+          </Key>
+          <Property Name="Documento_libreta_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha_vencimiento" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Comentarios" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Documento_propiedad">
+          <Key>
+            <PropertyRef Name="Documento_propiedad_ID" />
+          </Key>
+          <Property Name="Documento_propiedad_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Comentarios" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Movil">
+          <Key>
+            <PropertyRef Name="Movil_ID" />
+          </Key>
+          <Property Name="Movil_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Seguro_ID" Type="Int32" />
+          <Property Name="Comentarios" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Movil_Chofer">
+          <Key>
+            <PropertyRef Name="Movil_Chofer_ID" />
+          </Key>
+          <Property Name="Movil_Chofer_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Movil_ID" Type="Int32" Nullable="false" />
+          <Property Name="Chofer_ID" Type="Int32" Nullable="false" />
+          <Property Name="Comentarios" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Persona">
+          <Key>
+            <PropertyRef Name="Persona_ID" />
+          </Key>
+          <Property Name="Persona_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Documento_cedula_ID" Type="Int32" />
+          <Property Name="Documento_libreta_ID" Type="Int32" />
+          <Property Name="Nombre_completo" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Fecha_nacimiento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ciudad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Departamento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Contacto1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Contacto2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Propietario">
+          <Key>
+            <PropertyRef Name="Propietario_ID" />
+          </Key>
+          <Property Name="Propietario_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Persona_ID" Type="Int32" Nullable="false" />
+          <Property Name="Comentarios" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Rol_usuario">
+          <Key>
+            <PropertyRef Name="Rol_usuario_ID" />
+          </Key>
+          <Property Name="Rol_usuario_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Valor" Type="Int32" Nullable="false" />
+          <Property Name="Comentarios" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Seguro">
+          <Key>
+            <PropertyRef Name="Seguro_ID" />
+          </Key>
+          <Property Name="Seguro_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tipo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Fecha_pago" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Importe" Type="Int32" />
+          <Property Name="Comentarios" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Ticket">
+          <Key>
+            <PropertyRef Name="Ticket_ID" />
+          </Key>
+          <Property Name="Ticket_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Movil_ID" Type="Int32" Nullable="false" />
+          <Property Name="Comentarios" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Turno">
+          <Key>
+            <PropertyRef Name="Turno_ID" />
+          </Key>
+          <Property Name="Turno_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Movil_ID" Type="Int32" Nullable="false" />
+          <Property Name="Comentarios" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Usuario_ID" />
+          </Key>
+          <Property Name="Usuario_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Usuario1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Clave" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Rol_usuario_ID" Type="Int32" Nullable="false" />
+          <Property Name="EsAdmin" Type="Boolean" Nullable="false" />
+          <Property Name="Comentarios" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="CentriluxDB" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Chofers" EntityType="Self.Chofer" />
+          <EntitySet Name="Documento_cedula" EntityType="Self.Documento_cedula" />
+          <EntitySet Name="Documento_libreta" EntityType="Self.Documento_libreta" />
+          <EntitySet Name="Documento_propiedad" EntityType="Self.Documento_propiedad" />
+          <EntitySet Name="Movils" EntityType="Self.Movil" />
+          <EntitySet Name="Movil_Chofer" EntityType="Self.Movil_Chofer" />
+          <EntitySet Name="Personas" EntityType="Self.Persona" />
+          <EntitySet Name="Propietarios" EntityType="Self.Propietario" />
+          <EntitySet Name="Rol_usuario" EntityType="Self.Rol_usuario" />
+          <EntitySet Name="Seguroes" EntityType="Self.Seguro" />
+          <EntitySet Name="Tickets" EntityType="Self.Ticket" />
+          <EntitySet Name="Turnoes" EntityType="Self.Turno" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CentriluxDB_ModelStoreContainer" CdmEntityContainer="CentriluxDB">
+          <EntitySetMapping Name="Chofers">
+            <EntityTypeMapping TypeName="CentriluxDB_Model.Chofer">
+              <MappingFragment StoreEntitySet="Chofer">
+                <ScalarProperty Name="Chofer_ID" ColumnName="Chofer_ID" />
+                <ScalarProperty Name="Persona_ID" ColumnName="Persona_ID" />
+                <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Documento_cedula">
+            <EntityTypeMapping TypeName="CentriluxDB_Model.Documento_cedula">
+              <MappingFragment StoreEntitySet="Documento_cedula">
+                <ScalarProperty Name="Documento_cedula_ID" ColumnName="Documento_cedula_ID" />
+                <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Documento_libreta">
+            <EntityTypeMapping TypeName="CentriluxDB_Model.Documento_libreta">
+              <MappingFragment StoreEntitySet="Documento_libreta">
+                <ScalarProperty Name="Documento_libreta_ID" ColumnName="Documento_libreta_ID" />
+                <ScalarProperty Name="Fecha_vencimiento" ColumnName="Fecha_vencimiento" />
+                <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Documento_propiedad">
+            <EntityTypeMapping TypeName="CentriluxDB_Model.Documento_propiedad">
+              <MappingFragment StoreEntitySet="Documento_propiedad">
+                <ScalarProperty Name="Documento_propiedad_ID" ColumnName="Documento_propiedad_ID" />
+                <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Movils">
+            <EntityTypeMapping TypeName="CentriluxDB_Model.Movil">
+              <MappingFragment StoreEntitySet="Movil">
+                <ScalarProperty Name="Movil_ID" ColumnName="Movil_ID" />
+                <ScalarProperty Name="Seguro_ID" ColumnName="Seguro_ID" />
+                <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Movil_Chofer">
+            <EntityTypeMapping TypeName="CentriluxDB_Model.Movil_Chofer">
+              <MappingFragment StoreEntitySet="Movil_Chofer">
+                <ScalarProperty Name="Movil_Chofer_ID" ColumnName="Movil_Chofer_ID" />
+                <ScalarProperty Name="Movil_ID" ColumnName="Movil_ID" />
+                <ScalarProperty Name="Chofer_ID" ColumnName="Chofer_ID" />
+                <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personas">
+            <EntityTypeMapping TypeName="CentriluxDB_Model.Persona">
+              <MappingFragment StoreEntitySet="Persona">
+                <ScalarProperty Name="Contacto2" ColumnName="Contacto2" />
+                <ScalarProperty Name="Contacto1" ColumnName="Contacto1" />
+                <ScalarProperty Name="Persona_ID" ColumnName="Persona_ID" />
+                <ScalarProperty Name="Documento_cedula_ID" ColumnName="Documento_cedula_ID" />
+                <ScalarProperty Name="Documento_libreta_ID" ColumnName="Documento_libreta_ID" />
+                <ScalarProperty Name="Nombre_completo" ColumnName="Nombre_completo" />
+                <ScalarProperty Name="Fecha_nacimiento" ColumnName="Fecha_nacimiento" />
+                <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+                <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Propietarios">
+            <EntityTypeMapping TypeName="CentriluxDB_Model.Propietario">
+              <MappingFragment StoreEntitySet="Propietario">
+                <ScalarProperty Name="Propietario_ID" ColumnName="Propietario_ID" />
+                <ScalarProperty Name="Persona_ID" ColumnName="Persona_ID" />
+                <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rol_usuario">
+            <EntityTypeMapping TypeName="CentriluxDB_Model.Rol_usuario">
+              <MappingFragment StoreEntitySet="Rol_usuario">
+                <ScalarProperty Name="Rol_usuario_ID" ColumnName="Rol_usuario_ID" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Seguroes">
+            <EntityTypeMapping TypeName="CentriluxDB_Model.Seguro">
+              <MappingFragment StoreEntitySet="Seguro">
+                <ScalarProperty Name="Seguro_ID" ColumnName="Seguro_ID" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Fecha_pago" ColumnName="Fecha_pago" />
+                <ScalarProperty Name="Importe" ColumnName="Importe" />
+                <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tickets">
+            <EntityTypeMapping TypeName="CentriluxDB_Model.Ticket">
+              <MappingFragment StoreEntitySet="Ticket">
+                <ScalarProperty Name="Ticket_ID" ColumnName="Ticket_ID" />
+                <ScalarProperty Name="Movil_ID" ColumnName="Movil_ID" />
+                <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Turnoes">
+            <EntityTypeMapping TypeName="CentriluxDB_Model.Turno">
+              <MappingFragment StoreEntitySet="Turno">
+                <ScalarProperty Name="Turno_ID" ColumnName="Turno_ID" />
+                <ScalarProperty Name="Movil_ID" ColumnName="Movil_ID" />
+                <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="CentriluxDB_Model.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="Usuario_ID" ColumnName="Usuario_ID" />
+                <ScalarProperty Name="Usuario1" ColumnName="Usuario" />
+                <ScalarProperty Name="Clave" ColumnName="Clave" />
+                <ScalarProperty Name="Rol_usuario_ID" ColumnName="Rol_usuario_ID" />
+                <ScalarProperty Name="EsAdmin" ColumnName="EsAdmin" />
+                <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
