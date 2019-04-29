@@ -17,5 +17,6 @@ namespace Centrilux.Models
         public int Documento_libreta_ID { get; set; }
         public System.DateTime Fecha_vencimiento { get; set; }
         public string Comentarios { get; set; }
+        public string Tipo { get; set; }
     }
 }

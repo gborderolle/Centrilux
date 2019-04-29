@@ -16,5 +16,8 @@ namespace Centrilux.Models
     {
         public int Documento_cedula_ID { get; set; }
         public string Comentarios { get; set; }
+        public int Numero { get; set; }
+        public System.DateTime Fecha_nacimiento { get; set; }
+        public Nullable<System.DateTime> Fecha_vencimiento { get; set; }
     }
 }

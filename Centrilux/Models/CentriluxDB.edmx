@@ -11,6 +11,8 @@
           </Key>
           <Property Name="Chofer_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Persona_ID" Type="int" Nullable="false" />
+          <Property Name="Fecha_ingreso" Type="date" />
+          <Property Name="Fecha_egreso" Type="date" />
           <Property Name="Comentarios" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Documento_cedula">
@@ -18,6 +20,9 @@
             <PropertyRef Name="Documento_cedula_ID" />
           </Key>
           <Property Name="Documento_cedula_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Numero" Type="int" Nullable="false" />
+          <Property Name="Fecha_nacimiento" Type="date" Nullable="false" />
+          <Property Name="Fecha_vencimiento" Type="date" />
           <Property Name="Comentarios" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Documento_libreta">
@@ -25,7 +30,8 @@
             <PropertyRef Name="Documento_libreta_ID" />
           </Key>
           <Property Name="Documento_libreta_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Fecha_vencimiento" Type="datetime" Nullable="false" />
+          <Property Name="Tipo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Fecha_vencimiento" Type="date" Nullable="false" />
           <Property Name="Comentarios" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Documento_propiedad">
@@ -33,6 +39,7 @@
             <PropertyRef Name="Documento_propiedad_ID" />
           </Key>
           <Property Name="Documento_propiedad_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Propietario_ID" Type="int" Nullable="false" />
           <Property Name="Comentarios" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Movil">
@@ -41,6 +48,7 @@
           </Key>
           <Property Name="Movil_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Seguro_ID" Type="int" />
+          <Property Name="Documento_propiedad_ID" Type="int" />
           <Property Name="Comentarios" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Movil_Chofer">
@@ -60,7 +68,6 @@
           <Property Name="Documento_cedula_ID" Type="int" />
           <Property Name="Documento_libreta_ID" Type="int" />
           <Property Name="Nombre_completo" Type="varchar" MaxLength="150" Nullable="false" />
-          <Property Name="Fecha_nacimiento" Type="varchar" MaxLength="50" />
           <Property Name="Ciudad" Type="varchar" MaxLength="50" />
           <Property Name="Departamento" Type="varchar" MaxLength="50" />
           <Property Name="Email" Type="varchar" MaxLength="50" />
@@ -100,7 +107,10 @@
           </Key>
           <Property Name="Ticket_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Movil_ID" Type="int" Nullable="false" />
+          <Property Name="Chofer_ID" Type="int" Nullable="false" />
+          <Property Name="Turno_ID" Type="int" Nullable="false" />
           <Property Name="Comentarios" Type="varchar" MaxLength="100" />
+          <Property Name="Importe" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Turno">
           <Key>
@@ -147,6 +157,8 @@
           <Property Name="Chofer_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Persona_ID" Type="Int32" Nullable="false" />
           <Property Name="Comentarios" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Fecha_ingreso" Type="DateTime" Precision="0" />
+          <Property Name="Fecha_egreso" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="Documento_cedula">
           <Key>
@@ -154,14 +166,18 @@
           </Key>
           <Property Name="Documento_cedula_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Comentarios" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Numero" Type="Int32" Nullable="false" />
+          <Property Name="Fecha_nacimiento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Fecha_vencimiento" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="Documento_libreta">
           <Key>
             <PropertyRef Name="Documento_libreta_ID" />
           </Key>
           <Property Name="Documento_libreta_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Fecha_vencimiento" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Fecha_vencimiento" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Comentarios" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Tipo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Documento_propiedad">
           <Key>
@@ -169,6 +185,7 @@
           </Key>
           <Property Name="Documento_propiedad_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Comentarios" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Propietario_ID" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Movil">
           <Key>
@@ -177,6 +194,7 @@
           <Property Name="Movil_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Seguro_ID" Type="Int32" />
           <Property Name="Comentarios" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Documento_propiedad_ID" Type="Int32" />
         </EntityType>
         <EntityType Name="Movil_Chofer">
           <Key>
@@ -236,6 +254,9 @@
           <Property Name="Ticket_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Movil_ID" Type="Int32" Nullable="false" />
           <Property Name="Comentarios" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Chofer_ID" Type="Int32" Nullable="false" />
+          <Property Name="Turno_ID" Type="Int32" Nullable="false" />
+          <Property Name="Importe" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Turno">
           <Key>
@@ -280,6 +301,8 @@
           <EntitySetMapping Name="Chofers">
             <EntityTypeMapping TypeName="CentriluxDB_Model.Chofer">
               <MappingFragment StoreEntitySet="Chofer">
+                <ScalarProperty Name="Fecha_egreso" ColumnName="Fecha_egreso" />
+                <ScalarProperty Name="Fecha_ingreso" ColumnName="Fecha_ingreso" />
                 <ScalarProperty Name="Chofer_ID" ColumnName="Chofer_ID" />
                 <ScalarProperty Name="Persona_ID" ColumnName="Persona_ID" />
                 <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
@@ -289,6 +312,9 @@
           <EntitySetMapping Name="Documento_cedula">
             <EntityTypeMapping TypeName="CentriluxDB_Model.Documento_cedula">
               <MappingFragment StoreEntitySet="Documento_cedula">
+                <ScalarProperty Name="Fecha_vencimiento" ColumnName="Fecha_vencimiento" />
+                <ScalarProperty Name="Fecha_nacimiento" ColumnName="Fecha_nacimiento" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
                 <ScalarProperty Name="Documento_cedula_ID" ColumnName="Documento_cedula_ID" />
                 <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
               </MappingFragment>
@@ -297,6 +323,7 @@
           <EntitySetMapping Name="Documento_libreta">
             <EntityTypeMapping TypeName="CentriluxDB_Model.Documento_libreta">
               <MappingFragment StoreEntitySet="Documento_libreta">
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
                 <ScalarProperty Name="Documento_libreta_ID" ColumnName="Documento_libreta_ID" />
                 <ScalarProperty Name="Fecha_vencimiento" ColumnName="Fecha_vencimiento" />
                 <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
@@ -306,6 +333,7 @@
           <EntitySetMapping Name="Documento_propiedad">
             <EntityTypeMapping TypeName="CentriluxDB_Model.Documento_propiedad">
               <MappingFragment StoreEntitySet="Documento_propiedad">
+                <ScalarProperty Name="Propietario_ID" ColumnName="Propietario_ID" />
                 <ScalarProperty Name="Documento_propiedad_ID" ColumnName="Documento_propiedad_ID" />
                 <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
               </MappingFragment>
@@ -314,6 +342,7 @@
           <EntitySetMapping Name="Movils">
             <EntityTypeMapping TypeName="CentriluxDB_Model.Movil">
               <MappingFragment StoreEntitySet="Movil">
+                <ScalarProperty Name="Documento_propiedad_ID" ColumnName="Documento_propiedad_ID" />
                 <ScalarProperty Name="Movil_ID" ColumnName="Movil_ID" />
                 <ScalarProperty Name="Seguro_ID" ColumnName="Seguro_ID" />
                 <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
@@ -339,7 +368,6 @@
                 <ScalarProperty Name="Documento_cedula_ID" ColumnName="Documento_cedula_ID" />
                 <ScalarProperty Name="Documento_libreta_ID" ColumnName="Documento_libreta_ID" />
                 <ScalarProperty Name="Nombre_completo" ColumnName="Nombre_completo" />
-                <ScalarProperty Name="Fecha_nacimiento" ColumnName="Fecha_nacimiento" />
                 <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
                 <ScalarProperty Name="Departamento" ColumnName="Departamento" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
@@ -379,6 +407,9 @@
           <EntitySetMapping Name="Tickets">
             <EntityTypeMapping TypeName="CentriluxDB_Model.Ticket">
               <MappingFragment StoreEntitySet="Ticket">
+                <ScalarProperty Name="Importe" ColumnName="Importe" />
+                <ScalarProperty Name="Turno_ID" ColumnName="Turno_ID" />
+                <ScalarProperty Name="Chofer_ID" ColumnName="Chofer_ID" />
                 <ScalarProperty Name="Ticket_ID" ColumnName="Ticket_ID" />
                 <ScalarProperty Name="Movil_ID" ColumnName="Movil_ID" />
                 <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />

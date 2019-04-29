@@ -7,6 +7,8 @@
     <Property Name="Chofer_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Persona_ID" Type="Int32" Nullable="false" />
     <Property Name="Comentarios" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Fecha_ingreso" Type="DateTime" Precision="0" />
+    <Property Name="Fecha_egreso" Type="DateTime" Precision="0" />
   </EntityType>
   <EntityType Name="Documento_cedula">
     <Key>
@@ -14,14 +16,18 @@
     </Key>
     <Property Name="Documento_cedula_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Comentarios" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Numero" Type="Int32" Nullable="false" />
+    <Property Name="Fecha_nacimiento" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Fecha_vencimiento" Type="DateTime" Precision="0" />
   </EntityType>
   <EntityType Name="Documento_libreta">
     <Key>
       <PropertyRef Name="Documento_libreta_ID" />
     </Key>
     <Property Name="Documento_libreta_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Fecha_vencimiento" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Fecha_vencimiento" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="Comentarios" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Tipo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Documento_propiedad">
     <Key>
@@ -29,6 +35,7 @@
     </Key>
     <Property Name="Documento_propiedad_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Comentarios" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Propietario_ID" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="Movil">
     <Key>
@@ -37,6 +44,7 @@
     <Property Name="Movil_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Seguro_ID" Type="Int32" />
     <Property Name="Comentarios" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Documento_propiedad_ID" Type="Int32" />
   </EntityType>
   <EntityType Name="Movil_Chofer">
     <Key>
@@ -59,6 +67,8 @@
     <Property Name="Ciudad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Departamento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Contacto1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Contacto2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Propietario">
     <Key>
@@ -94,6 +104,9 @@
     <Property Name="Ticket_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Movil_ID" Type="Int32" Nullable="false" />
     <Property Name="Comentarios" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Chofer_ID" Type="Int32" Nullable="false" />
+    <Property Name="Turno_ID" Type="Int32" Nullable="false" />
+    <Property Name="Importe" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="Turno">
     <Key>

@@ -16,5 +16,6 @@ namespace Centrilux.Models
     {
         public int Documento_propiedad_ID { get; set; }
         public string Comentarios { get; set; }
+        public int Propietario_ID { get; set; }
     }
 }

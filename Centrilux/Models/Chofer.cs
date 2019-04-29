@@ -17,5 +17,7 @@ namespace Centrilux.Models
         public int Chofer_ID { get; set; }
         public int Persona_ID { get; set; }
         public string Comentarios { get; set; }
+        public Nullable<System.DateTime> Fecha_ingreso { get; set; }
+        public Nullable<System.DateTime> Fecha_egreso { get; set; }
     }
 }

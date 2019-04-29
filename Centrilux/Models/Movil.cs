@@ -17,5 +17,6 @@ namespace Centrilux.Models
         public int Movil_ID { get; set; }
         public Nullable<int> Seguro_ID { get; set; }
         public string Comentarios { get; set; }
+        public Nullable<int> Documento_propiedad_ID { get; set; }
     }
 }

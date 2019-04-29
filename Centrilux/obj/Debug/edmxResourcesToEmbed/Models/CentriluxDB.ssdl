@@ -6,6 +6,8 @@
     </Key>
     <Property Name="Chofer_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Persona_ID" Type="int" Nullable="false" />
+    <Property Name="Fecha_ingreso" Type="date" />
+    <Property Name="Fecha_egreso" Type="date" />
     <Property Name="Comentarios" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="Documento_cedula">
@@ -13,6 +15,9 @@
       <PropertyRef Name="Documento_cedula_ID" />
     </Key>
     <Property Name="Documento_cedula_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Numero" Type="int" Nullable="false" />
+    <Property Name="Fecha_nacimiento" Type="date" Nullable="false" />
+    <Property Name="Fecha_vencimiento" Type="date" />
     <Property Name="Comentarios" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="Documento_libreta">
@@ -20,7 +25,8 @@
       <PropertyRef Name="Documento_libreta_ID" />
     </Key>
     <Property Name="Documento_libreta_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Fecha_vencimiento" Type="datetime" Nullable="false" />
+    <Property Name="Tipo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Fecha_vencimiento" Type="date" Nullable="false" />
     <Property Name="Comentarios" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="Documento_propiedad">
@@ -28,6 +34,7 @@
       <PropertyRef Name="Documento_propiedad_ID" />
     </Key>
     <Property Name="Documento_propiedad_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Propietario_ID" Type="int" Nullable="false" />
     <Property Name="Comentarios" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="Movil">
@@ -36,6 +43,7 @@
     </Key>
     <Property Name="Movil_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Seguro_ID" Type="int" />
+    <Property Name="Documento_propiedad_ID" Type="int" />
     <Property Name="Comentarios" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="Movil_Chofer">
@@ -55,10 +63,11 @@
     <Property Name="Documento_cedula_ID" Type="int" />
     <Property Name="Documento_libreta_ID" Type="int" />
     <Property Name="Nombre_completo" Type="varchar" MaxLength="150" Nullable="false" />
-    <Property Name="Fecha_nacimiento" Type="varchar" MaxLength="50" />
     <Property Name="Ciudad" Type="varchar" MaxLength="50" />
     <Property Name="Departamento" Type="varchar" MaxLength="50" />
     <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Contacto1" Type="varchar" MaxLength="50" />
+    <Property Name="Contacto2" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Propietario">
     <Key>
@@ -93,7 +102,10 @@
     </Key>
     <Property Name="Ticket_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Movil_ID" Type="int" Nullable="false" />
+    <Property Name="Chofer_ID" Type="int" Nullable="false" />
+    <Property Name="Turno_ID" Type="int" Nullable="false" />
     <Property Name="Comentarios" Type="varchar" MaxLength="100" />
+    <Property Name="Importe" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Turno">
     <Key>

@@ -4,6 +4,8 @@
     <EntitySetMapping Name="Chofers">
       <EntityTypeMapping TypeName="CentriluxDB_Model.Chofer">
         <MappingFragment StoreEntitySet="Chofer">
+          <ScalarProperty Name="Fecha_egreso" ColumnName="Fecha_egreso" />
+          <ScalarProperty Name="Fecha_ingreso" ColumnName="Fecha_ingreso" />
           <ScalarProperty Name="Chofer_ID" ColumnName="Chofer_ID" />
           <ScalarProperty Name="Persona_ID" ColumnName="Persona_ID" />
           <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
@@ -13,6 +15,9 @@
     <EntitySetMapping Name="Documento_cedula">
       <EntityTypeMapping TypeName="CentriluxDB_Model.Documento_cedula">
         <MappingFragment StoreEntitySet="Documento_cedula">
+          <ScalarProperty Name="Fecha_vencimiento" ColumnName="Fecha_vencimiento" />
+          <ScalarProperty Name="Fecha_nacimiento" ColumnName="Fecha_nacimiento" />
+          <ScalarProperty Name="Numero" ColumnName="Numero" />
           <ScalarProperty Name="Documento_cedula_ID" ColumnName="Documento_cedula_ID" />
           <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
         </MappingFragment>
@@ -21,6 +26,7 @@
     <EntitySetMapping Name="Documento_libreta">
       <EntityTypeMapping TypeName="CentriluxDB_Model.Documento_libreta">
         <MappingFragment StoreEntitySet="Documento_libreta">
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
           <ScalarProperty Name="Documento_libreta_ID" ColumnName="Documento_libreta_ID" />
           <ScalarProperty Name="Fecha_vencimiento" ColumnName="Fecha_vencimiento" />
           <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
@@ -30,6 +36,7 @@
     <EntitySetMapping Name="Documento_propiedad">
       <EntityTypeMapping TypeName="CentriluxDB_Model.Documento_propiedad">
         <MappingFragment StoreEntitySet="Documento_propiedad">
+          <ScalarProperty Name="Propietario_ID" ColumnName="Propietario_ID" />
           <ScalarProperty Name="Documento_propiedad_ID" ColumnName="Documento_propiedad_ID" />
           <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
         </MappingFragment>
@@ -38,6 +45,7 @@
     <EntitySetMapping Name="Movils">
       <EntityTypeMapping TypeName="CentriluxDB_Model.Movil">
         <MappingFragment StoreEntitySet="Movil">
+          <ScalarProperty Name="Documento_propiedad_ID" ColumnName="Documento_propiedad_ID" />
           <ScalarProperty Name="Movil_ID" ColumnName="Movil_ID" />
           <ScalarProperty Name="Seguro_ID" ColumnName="Seguro_ID" />
           <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
@@ -57,11 +65,12 @@
     <EntitySetMapping Name="Personas">
       <EntityTypeMapping TypeName="CentriluxDB_Model.Persona">
         <MappingFragment StoreEntitySet="Persona">
+          <ScalarProperty Name="Contacto2" ColumnName="Contacto2" />
+          <ScalarProperty Name="Contacto1" ColumnName="Contacto1" />
           <ScalarProperty Name="Persona_ID" ColumnName="Persona_ID" />
           <ScalarProperty Name="Documento_cedula_ID" ColumnName="Documento_cedula_ID" />
           <ScalarProperty Name="Documento_libreta_ID" ColumnName="Documento_libreta_ID" />
           <ScalarProperty Name="Nombre_completo" ColumnName="Nombre_completo" />
-          <ScalarProperty Name="Fecha_nacimiento" ColumnName="Fecha_nacimiento" />
           <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
           <ScalarProperty Name="Departamento" ColumnName="Departamento" />
           <ScalarProperty Name="Email" ColumnName="Email" />
@@ -101,6 +110,9 @@
     <EntitySetMapping Name="Tickets">
       <EntityTypeMapping TypeName="CentriluxDB_Model.Ticket">
         <MappingFragment StoreEntitySet="Ticket">
+          <ScalarProperty Name="Importe" ColumnName="Importe" />
+          <ScalarProperty Name="Turno_ID" ColumnName="Turno_ID" />
+          <ScalarProperty Name="Chofer_ID" ColumnName="Chofer_ID" />
           <ScalarProperty Name="Ticket_ID" ColumnName="Ticket_ID" />
           <ScalarProperty Name="Movil_ID" ColumnName="Movil_ID" />
           <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />

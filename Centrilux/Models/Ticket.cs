@@ -17,5 +17,8 @@ namespace Centrilux.Models
         public int Ticket_ID { get; set; }
         public int Movil_ID { get; set; }
         public string Comentarios { get; set; }
+        public int Chofer_ID { get; set; }
+        public int Turno_ID { get; set; }
+        public int Importe { get; set; }
     }
 }
